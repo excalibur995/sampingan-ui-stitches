@@ -1,0 +1,58 @@
+{
+  "name": "sampingan-ui-proto",
+  "version": "1.0.0",
+  "main": "dist/index.ts",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "author": "Bazzy",
+  "license": "MIT",
+  "dependencies": {
+    "@stitches/react": "^1.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "@size-limit/preset-big-lib": "^5.0.3",
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/react": "^6.3.7",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "autoprefixer": "^9",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-styled-components": "^1.12.0",
+    "husky": "^7.0.1",
+    "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.1",
+    "size-limit": "^5.0.3",
+    "storybook-dark-mode": "^1.0.8",
+    "typescript": "^4.2.2"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build:dist": "rollup -c",
+    "size": "size-limit",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx}' --config ./.prettierrc",
+    "prepare": "husky install"
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.esm.js",
+      "limit": "100 KB"
+    }
+  ]
+}

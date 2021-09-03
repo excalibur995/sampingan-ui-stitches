@@ -1,0 +1,12 @@
+# Sampingan UI Prototype using Stitches js
+
+Sampingan Design Kit - https://www.figma.com/file/vb4b3ts0GftYwiRZkN8GxB/Sampingan-Design-System?node-id=0%3A1&viewport=303%2C48%2C0.2
+
+
+Kerjaan Design Kit - https://www.figma.com/file/msXg1vIJVoHo7fc7T35gIC/Kerjaan-Design-System?node-id=0%3A1&viewport=303%2C48%2C0.69
+
+## Why Stitches.js ? 
+ We somehow using next.js so we want our component also compatible and easily managed in ssr,
+ also sizes should be small, and fast like dominic toretto
+
+ ![sizes]("./src/assets/images/Screen Shot 2021-09-03 at 23.54.15.png")
