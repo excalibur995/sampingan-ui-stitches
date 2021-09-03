@@ -9,4 +9,4 @@ Kerjaan Design Kit - https://www.figma.com/file/msXg1vIJVoHo7fc7T35gIC/Kerjaan-D
  We somehow using next.js so we want our component also compatible and easily managed in ssr,
  also sizes should be small, and fast like dominic toretto
 
- ![sizes]("./src/assets/images/Screen Shot 2021-09-03 at 23.54.15.png")
+ ![sizes](https://github.com/excalibur995/sampingan-ui-stitches/blob/main/src/assets/images/Screen%20Shot%202021-09-03%20at%2023.54.15.png?raw=true)
