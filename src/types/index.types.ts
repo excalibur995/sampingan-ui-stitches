@@ -46,12 +46,19 @@ export type SampinganFontSizeVariant =
 	| 'button-b2';
 
 export type SampinganUiSizes = 'small' | 'medium' | 'large';
+export type SaminganFontSizes =
+	| '0.75rem' // 12px
+	| '0.875rem' // 14px
+	| '1rem' // 16px
+	| '1.25rem' // 16px
+	| '1.5rem' // 24px
+	| '2rem'; // 32px
 export type SaminganLineHeight =
-	| '12px'
-	| '14px'
 	| '16px'
 	| '20px'
+	| '22px'
 	| '24px'
-	| '32px';
+	| '28px'
+	| '40px';
 export type SampinganFontWeight = 400 | 500 | 700;
 export type SampinganRadii = 'rounded-none' | 'rounded' | 'rounded-full';

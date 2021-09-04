@@ -16,13 +16,13 @@ const TypographyContent = styled('span', {
 	},
 });
 
-export function Typography({
+export const Typography = ({
 	roles,
 	ink,
 	variant,
 	transform,
 	children,
-}: TypographyProps) {
+}: TypographyProps) => {
 	const typoTag = useVariantTag(variant ?? typographyDefaultProps.variant);
 	const typographyInk = useTypographyInk(roles, ink);
 
@@ -39,6 +39,6 @@ export function Typography({
 			{children}
 		</TypographyContent>
 	);
-}
+};
 
 Typography.defaultProps = typographyDefaultProps;
