@@ -4,6 +4,7 @@ import {
 	SaminganLineHeight,
 	SampinganFontWeight,
 	SampinganRadii,
+	SaminganFontSizes,
 } from '../types/index.types';
 
 export interface SampinganUITheme {
@@ -20,7 +21,7 @@ export type SampinganUiThemeMapInterfaces<T extends string, U> = {
 };
 
 export interface SampinganUiFontInterface {
-	fontSize: string;
+	fontSize: SaminganFontSizes;
 	lineHeight: SaminganLineHeight;
 	fontWeight: SampinganFontWeight;
 }
