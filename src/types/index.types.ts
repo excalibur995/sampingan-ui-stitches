@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type SampinganUIRole = 'Kerjaan' | 'Sampingan';
+export type SampinganUISystem = 'Kerjaan' | 'Sampingan';
 
 export type SampinganColorVariant =
   | 'kerjaan_primary'
@@ -34,24 +34,23 @@ export type SampinganUIButtonVariant =
   | 'ghost';
 
 export type SampinganFontSizeVariant =
-  | 'title-t1'
-  | 'title-t2'
-  | 'header-h1'
-  | 'header-h2'
-  | 'field-f1-4'
-  | 'field-f1-5'
-  | 'field-f1-7'
-  | 'field-f2-4'
-  | 'field-f2-5'
-  | 'field-f2-7'
-  | 'paragraph-p1-4'
-  | 'paragraph-p1-5'
-  | 'paragraph-p1-7'
-  | 'paragraph-p2-4'
-  | 'paragraph-p2-5'
-  | 'paragraph-p2-7'
-  | 'button-b1'
-  | 'button-b2';
+  | 'title'
+  | 'hero'
+  | 'header'
+  | 'body-1'
+  | 'body-2'
+  | 'body-3'
+  | 'caption-1'
+  | 'caption-2'
+  | 'caption-3';
+
+export type SampinganTextTransform =
+  | 'none'
+  | 'capitalize'
+  | 'uppercase'
+  | 'lowercase'
+  | 'initial'
+  | 'inherit';
 
 export type SampinganUiSizes = 'none' | 'small' | 'medium' | 'large';
 export type SaminganFontSizes =
