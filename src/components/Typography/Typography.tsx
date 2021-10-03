@@ -41,4 +41,6 @@ export const Typography = ({
   );
 };
 
-Typography.defaultProps = typographyDefaultProps;
+Typography.defaultProps = {
+  ...typographyDefaultProps,
+};

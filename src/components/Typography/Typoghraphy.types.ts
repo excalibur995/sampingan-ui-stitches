@@ -1,6 +1,7 @@
 import {
   SampinganFontSizeVariant,
-  SampinganUIRole,
+  SampinganTextTransform,
+  SampinganUISystem,
   SampinganUIVariant,
 } from '../../types/index.types';
 
@@ -12,7 +13,7 @@ export interface TypographyProps {
   /**
    * Components Role, decide component what project user in
    */
-  system?: SampinganUIRole;
+  system?: SampinganUISystem;
   /**
    * Text Color for the text
    */
@@ -24,19 +25,13 @@ export interface TypographyProps {
   /**
    * Define the text transformation
    */
-  transform?:
-    | 'none'
-    | 'capitalize'
-    | 'uppercase'
-    | 'lowercase'
-    | 'initial'
-    | 'inherit';
+  transform?: SampinganTextTransform;
 }
 
 export const typographyDefaultProps: Required<TypographyProps> = {
   system: 'Sampingan',
   ink: 'neutral',
-  variant: 'title-t1',
+  variant: 'caption-1',
   children: '',
   transform: 'none',
 };

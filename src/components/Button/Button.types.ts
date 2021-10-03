@@ -3,7 +3,7 @@ import {
   SaminganUiFeedback,
   SampinganColorVariant,
   SampinganUIButtonVariant,
-  SampinganUIRole,
+  SampinganUISystem,
   SampinganUiSizes,
   SampinganUIVariant,
 } from '../../types/index.types';
@@ -43,7 +43,7 @@ export interface ButtonProps extends SpinnerProps, GlobalComponentTypes {
   /**
    * indicates the role of system
    */
-  system?: SampinganUIRole;
+  system?: SampinganUISystem;
   /**
    * indicates the color of Button
    */
