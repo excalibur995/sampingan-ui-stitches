@@ -1,7 +1,7 @@
 import { typographyDefaultProps } from '../components/Typography/Typoghraphy.types';
 import { SampinganUITheme } from '../theme/theme.types';
 import {
-  SampinganUIRole,
+  SampinganUISystem,
   SampinganUIVariant,
   SampinganColorVariant,
   SampinganFontSizeVariant,
@@ -9,7 +9,7 @@ import {
 
 type CV = SampinganColorVariant;
 type Ink = SampinganUIVariant;
-type System = SampinganUIRole;
+type System = SampinganUISystem;
 
 export const useTypographyInk = (system?: System, ink?: Ink): CV => {
   if (!system || !ink) {
@@ -55,95 +55,50 @@ export const uiColorThemeHelper: SampinganUITheme = {
     sampingan_white: '#fff',
   },
   font: {
-    'title-t1': {
+    title: {
       fontSize: '2rem',
+      fontWeight: 700,
       lineHeight: '40px',
-      fontWeight: 700,
     },
-    'title-t2': {
+    hero: {
       fontSize: '1.5rem',
+      fontWeight: 700,
       lineHeight: '28px',
-      fontWeight: 700,
     },
-    'header-h1': {
-      fontSize: '1.25rem',
-      lineHeight: '24px',
-      fontWeight: 700,
-    },
-    'header-h2': {
+    header: {
       fontSize: '1rem',
-      lineHeight: '24px',
       fontWeight: 700,
-    },
-    'field-f1-4': {
-      fontSize: '1rem',
-      lineHeight: '24px',
-      fontWeight: 400,
-    },
-    'field-f1-5': {
-      fontSize: '1rem',
-      lineHeight: '24px',
-      fontWeight: 500,
-    },
-    'field-f1-7': {
-      fontSize: '1rem',
-      lineHeight: '24px',
-      fontWeight: 700,
-    },
-    'field-f2-4': {
-      fontSize: '0.875rem',
-      lineHeight: '22px',
-      fontWeight: 400,
-    },
-    'field-f2-5': {
-      fontSize: '0.875rem',
-      lineHeight: '22px',
-      fontWeight: 500,
-    },
-    'field-f2-7': {
-      fontSize: '0.875rem',
-      lineHeight: '22px',
-      fontWeight: 700,
-    },
-    'paragraph-p1-4': {
-      fontSize: '0.875rem',
       lineHeight: '20px',
-      fontWeight: 400,
     },
-    'paragraph-p1-5': {
+    'body-1': {
       fontSize: '0.875rem',
-      lineHeight: '20px',
-      fontWeight: 500,
-    },
-    'paragraph-p1-7': {
-      fontSize: '0.875rem',
-      lineHeight: '20px',
       fontWeight: 700,
+      lineHeight: '20px',
     },
-    'paragraph-p2-4': {
-      fontSize: '0.75rem',
-      lineHeight: '16px',
-      fontWeight: 400,
-    },
-    'paragraph-p2-5': {
-      fontSize: '0.75rem',
-      lineHeight: '16px',
-      fontWeight: 500,
-    },
-    'paragraph-p2-7': {
-      fontSize: '0.75rem',
-      lineHeight: '16px',
-      fontWeight: 700,
-    },
-    'button-b1': {
-      fontSize: '1rem',
-      lineHeight: '24px',
-      fontWeight: 400,
-    },
-    'button-b2': {
+    'body-2': {
       fontSize: '0.875rem',
-      lineHeight: '22px',
+      fontWeight: 500,
+      lineHeight: '20px',
+    },
+    'body-3': {
+      fontSize: '0.875rem',
       fontWeight: 400,
+      lineHeight: '20px',
+    },
+    'caption-1': {
+      fontSize: '0.75rem',
+      fontWeight: 700,
+      lineHeight: '16px',
+    },
+    'caption-2': {
+      fontSize: '0.75rem',
+      fontWeight: 500,
+      lineHeight: '16px',
+    },
+    'caption-3': {
+      fontSize: '0.75rem',
+      fontWeight: 400,
+      lineHeight: '16px',
     },
   },
   radii: {
