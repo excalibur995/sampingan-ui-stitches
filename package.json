@@ -31,6 +31,7 @@
     "autoprefixer": "^9",
     "babel-loader": "^8.2.2",
     "babel-plugin-styled-components": "^1.12.0",
+    "chromatic": "^5.10.2",
     "husky": "^7.0.1",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
@@ -47,7 +48,8 @@
     "build:dist": "rollup -c",
     "size": "size-limit",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx}' --config ./.prettierrc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "chromatic": "npx chromatic --project-token=CHROMATIC_PROJECT_TOKEN"
   },
   "size-limit": [
     {
