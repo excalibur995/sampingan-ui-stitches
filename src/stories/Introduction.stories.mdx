@@ -1,132 +1,200 @@
-import { Meta } from '@storybook/addon-docs';
-import Code from '../static/assets/code-brackets.svg';
-import Colors from '../static/assets/colors.svg';
-import Comments from '../static/assets/comments.svg';
-import Direction from '../static/assets/direction.svg';
-import Flow from '../static/assets/flow.svg';
-import Plugin from '../static/assets/plugin.svg';
-import Repo from '../static/assets/repo.svg';
-import StackAlt from '../static/assets/stackalt.svg';
+import { Meta } from "@storybook/addon-docs";
+import Code from "../static/assets/code-brackets.svg";
+import Colors from "../static/assets/colors.svg";
+import Comments from "../static/assets/comments.svg";
+import Direction from "../static/assets/direction.svg";
+import Flow from "../static/assets/flow.svg";
+import Plugin from "../static/assets/plugin.svg";
+import Repo from "../static/assets/repo.svg";
+import StackAlt from "../static/assets/stackalt.svg";
 
 <Meta title="Example/Introduction" />
 
 <style>{`
-  .subheading {
-    --mediumdark: '#999999';
-    font-weight: 900;
-    font-size: 13px;
-    color: #999;
-    letter-spacing: 6px;
-    line-height: 24px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
+ .subheading {
+  --mediumdark: "#999999";
+  font-weight: 900;
+  font-size: 13px;
+  color: #999;
+  letter-spacing: 6px;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  margin-top: 40px;
+}
 
+.link-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 10px;
+}
+
+@media (min-width: 620px) {
   .link-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    row-gap: 10px;
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-template-columns: 1fr 1fr;
   }
+}
 
-  @media (min-width: 620px) {
-    .link-list {
-      row-gap: 20px;
-      column-gap: 20px;
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media all and (-ms-high-contrast:none) {
+@media all and (-ms-high-contrast: none) {
   .link-list {
-      display: -ms-grid;
-      -ms-grid-columns: 1fr 1fr;
-      -ms-grid-rows: 1fr 1fr;
-    }
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
   }
+}
+.tech-stack-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.tech-stack-container section {
+  margin: 0 5px;
+}
+.tech-stack {
+  width: 200px;
+  height: auto;
+  object-fit:contain;
+}
 
-  .link-item {
-    display: block;
-    padding: 20px 30px 20px 15px;
-    border: 1px solid #00000010;
-    border-radius: 5px;
-    transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
-    color: #333333;
-    display: flex;
-    align-items: flex-start;
-  }
+.link-item {
+  display: block;
+  padding: 20px 30px 20px 15px;
+  border: 1px solid #00000010;
+  border-radius: 5px;
+  transition: background 150ms ease-out, border 150ms ease-out,
+    transform 150ms ease-out;
+  color: #333333;
+  display: flex;
+  align-items: flex-start;
+}
 
-  .link-item:hover {
-    border-color: #1EA7FD50;
-    transform: translate3d(0, -3px, 0);
-    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
-  }
+.link-item:hover {
+  border-color: #1ea7fd50;
+  transform: translate3d(0, -3px, 0);
+  box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+}
 
-  .link-item:active {
-    border-color: #1EA7FD;
-    transform: translate3d(0, 0, 0);
-  }
+.link-item:active {
+  border-color: #1ea7fd;
+  transform: translate3d(0, 0, 0);
+}
 
-  .link-item strong {
-    font-weight: 700;
-    display: block;
-    margin-bottom: 2px;
-  }
-  
-  .link-item img {
-    height: 40px;
-    width: 40px;
-    margin-right: 15px;
-    flex: none;
-  }
+.link-item strong {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
 
-  .link-item span {
-    font-size: 14px;
-    line-height: 20px;
-  }
+.link-item img {
+  height: 40px;
+  width: 40px;
+  margin-right: 15px;
+  flex: none;
+}
 
-  .tip {
-    display: inline-block;
-    border-radius: 1em;
-    font-size: 11px;
-    line-height: 12px;
-    font-weight: 700;
-    background: #E7FDD8;
-    color: #66BF3C;
-    padding: 4px 12px;
-    margin-right: 10px;
-    vertical-align: top;
-  }
+.link-item span {
+  font-size: 14px;
+  line-height: 20px;
+}
 
-  .tip-wrapper {
-    font-size: 13px;
-    line-height: 20px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
+.tip {
+  display: inline-block;
+  border-radius: 1em;
+  font-size: 11px;
+  line-height: 12px;
+  font-weight: 700;
+  background: #e7fdd8;
+  color: #66bf3c;
+  padding: 4px 12px;
+  margin-right: 10px;
+  vertical-align: top;
+}
 
-  .tip-wrapper code {
-    font-size: 12px;
-    display: inline-block;
-  }
+.tip-wrapper {
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
-  
+.tip-wrapper code {
+  font-size: 12px;
+  display: inline-block;
+}
+
 `}</style>
 
-# Welcome to Storybook
+# Welcome to Sampingan Design System Prototype
 
-Storybook helps you build UI components in isolation from your app's business logic, data, and context.
-That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
+This is a prototype version of our Design System that is still in progress by our designer, so everything in here maybe not appears in the final version.
 
 Browse example stories now by navigating to them in the sidebar.
 View their code in the `src/stories` directory to learn how they work.
 We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
 
+## Tech Stack
+
+<div className="tech-stack-container">
+  <section>
+    <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+      <div className="subheading">React</div>
+      <img
+        className="tech-stack"
+        src="https://ms314006.github.io/static/b7a8f321b0bbc07ca9b9d22a7a505ed5/97b31/React.jpg"
+        alt="React"
+      />
+    </a>
+  </section>
+  <section>
+    <a
+      href="https://www.typescriptlang.org"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div className="subheading">TypeScript</div>
+      <img
+        className="tech-stack"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7nRCQkz-T3MShDtx3Tk5mEKqIMzr4tteXK2FDCCrtH_rw0BOFGlkuc5bcNYHsa3HIWUs&usqp=CAU"
+        alt="TypeScript"
+      />
+    </a>
+  </section>
+  <section>
+    <a href="https://stitches.dev" target="_blank" rel="noopener noreferrer">
+      <div className="subheading">Stitches</div>
+      <img
+        className="tech-stack"
+        src="https://user-images.githubusercontent.com/372831/112011920-03e21400-8b29-11eb-9c9a-4e14d5a1f575.png"
+        alt="Stitches"
+      />
+    </a>
+  </section>
+  <section>
+    <a
+      href="https://rollupjs.org/guide/en/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div className="subheading">Rollup.js</div>
+      <img
+        className="tech-stack"
+        src="https://rollupjs.org/images/twitter-card.jpg"
+        alt="sizes"
+      />
+    </a>
+  </section>
+</div>
 
 <div>
   <div className="subheading">Current Sizes with 4 Components</div>
-    <img src="https://github.com/excalibur995/sampingan-ui-stitches/blob/main/src/static/assets/images/size-limit.png?raw=true" alt="sizes" />
+  <img
+    src="https://github.com/excalibur995/sampingan-ui-stitches/blob/main/src/static/assets/images/size-limit.png?raw=true"
+    alt="sizes"
+  />
 </div>
 
 <div className="subheading">Configure</div>
@@ -188,14 +256,22 @@ We recommend building UIs with a [**component-driven**](https://componentdriven.
       Configure, customize, and extend
     </span>
   </a>
-  <a className="link-item" href="https://storybook.js.org/tutorials/" target="_blank">
+  <a
+    className="link-item"
+    href="https://storybook.js.org/tutorials/"
+    target="_blank"
+  >
     <img src={Direction} alt="direction" />
     <span>
       <strong>In-depth guides</strong>
       Best practices from leading teams
     </span>
   </a>
-  <a className="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
+  <a
+    className="link-item"
+    href="https://github.com/storybookjs/storybook"
+    target="_blank"
+  >
     <img src={Code} alt="code" />
     <span>
       <strong>GitHub project</strong>
@@ -212,6 +288,6 @@ We recommend building UIs with a [**component-driven**](https://componentdriven.
 </div>
 
 <div className="tip-wrapper">
-  <span className="tip">Tip</span>Edit the Markdown in{' '}
+  <span className="tip">Tip</span>Edit the Markdown in{" "}
   <code>src/stories/Introduction.stories.mdx</code>
 </div>

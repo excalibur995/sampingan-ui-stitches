@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { styled, globalStyles } from '../../theme';
+import { styled } from '../../theme';
 import { SampinganColorVariant } from '../../types/index.types';
 import {
   hexToRGB,
