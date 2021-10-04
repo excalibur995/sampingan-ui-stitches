@@ -52,6 +52,14 @@ export type SampinganTextTransform =
   | 'initial'
   | 'inherit';
 
+export type SampinganUIInputTypes =
+  | 'email'
+  | 'password'
+  | 'search'
+  | 'tel'
+  | 'text'
+  | 'url';
+
 export type SampinganChipsVariants = 'text-only' | 'removeable';
 export type SampinganUiSizes = 'none' | 'small' | 'medium' | 'large';
 export type SaminganFontSizes =
