@@ -1,11 +1,12 @@
 import {
+  GlobalComponentTypes,
   SampinganFontSizeVariant,
   SampinganTextTransform,
   SampinganUISystem,
   SampinganUIVariant,
 } from '../../types/index.types';
 
-export interface TypographyProps {
+export interface TypographyProps extends GlobalComponentTypes {
   /**
    * Typography content
    */
@@ -29,6 +30,8 @@ export interface TypographyProps {
 }
 
 export const typographyDefaultProps: Required<TypographyProps> = {
+  id: 'sampingan-typo',
+  inlineStyle: {},
   system: 'Sampingan',
   ink: 'neutral',
   variant: 'caption-1',

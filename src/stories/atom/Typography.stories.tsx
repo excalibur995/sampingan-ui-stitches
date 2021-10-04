@@ -29,9 +29,11 @@ const VariantDetail = ({ detail, variant }: VariantProps) => {
   const theme = uiColorThemeHelper.font[variant][detail];
   const text = detail.replace(/[A-Z]/g, (letter) => ` ${letter}`);
   return (
-    <Typography transform="capitalize" variant="paragraph-p2-4">
-      {text}: <b>{theme}</b>
-    </Typography>
+    <div>
+      <Typography transform="capitalize" variant="caption-2">
+        {text}: <b>{theme}</b>
+      </Typography>
+    </div>
   );
 };
 

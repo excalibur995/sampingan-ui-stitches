@@ -22,18 +22,22 @@ export const Typography = ({
   variant,
   transform,
   children,
+  id,
+  inlineStyle,
 }: TypographyProps) => {
   const typoTag = useVariantTag(variant ?? typographyDefaultProps.variant);
   const typographyInk = useTypographyInk(system, ink);
 
   return (
     <TypographyContent
+      id={id}
       as={typoTag}
       variant={variant}
       css={{
         textTransform: transform,
         color: typographyInk,
         fontFamily: '$mono',
+        ...inlineStyle,
       }}
     >
       {children}
