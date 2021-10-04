@@ -52,6 +52,7 @@ export type SampinganTextTransform =
   | 'initial'
   | 'inherit';
 
+export type SampinganChipsVariants = 'text-only' | 'removeable';
 export type SampinganUiSizes = 'none' | 'small' | 'medium' | 'large';
 export type SaminganFontSizes =
   | '0.75rem' // 12px
@@ -71,6 +72,7 @@ export type SampinganFontWeight = 400 | 500 | 700;
 export type SampinganRadii =
   | 'rounded-none'
   | 'semi-rounded'
+  | 'chips'
   | 'rounded'
   | 'rounded-full';
 export type SaminganUiFeedback =
@@ -79,6 +81,9 @@ export type SaminganUiFeedback =
   | 'positive'
   | 'negative'
   | 'warning';
+export type SampinganUIStates = 'active' | 'inactive' | 'disabled';
+
+export type SampinganUIBaseClick<T> = React.MouseEventHandler<T>;
 export interface GlobalComponentTypes {
   /**
    * Indicate component identifier

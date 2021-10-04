@@ -35,6 +35,14 @@ export const useVariantTag = (variant: SampinganFontSizeVariant) => {
   }
 };
 
+export const hexToRGB = (hex: string, alpha: number) => {
+  const r = parseInt(hex.slice(1, 3), 16),
+    g = parseInt(hex.slice(3, 5), 16),
+    b = parseInt(hex.slice(5, 7), 16);
+  if (alpha) return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')';
+  return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+};
+
 export const uiColorThemeHelper: SampinganUITheme = {
   colors: {
     // Kerjaan
@@ -104,7 +112,8 @@ export const uiColorThemeHelper: SampinganUITheme = {
   radii: {
     'rounded-none': '0px',
     'semi-rounded': '4px',
-    rounded: '10px',
     'rounded-full': '9999px',
+    rounded: '10px',
+    chips: '36px',
   },
 };

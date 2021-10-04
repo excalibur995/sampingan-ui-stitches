@@ -1,10 +1,11 @@
 import { createStitches } from '@stitches/react';
 import { SampinganRadii } from '../types/index.types';
 import { uiColorThemeHelper } from '../utils/helper';
-export const { styled, css, keyframes } = createStitches({
+export const { styled, css, keyframes, globalCss } = createStitches({
   theme: {
     fonts: {
       mono: 'Söhne Mono, menlo, monospace',
+      roboto: 'Roboto, sans-serif',
     },
     colors: {
       ...uiColorThemeHelper.colors,
@@ -25,5 +26,13 @@ export const { styled, css, keyframes } = createStitches({
     radius: (value: SampinganRadii) => ({
       borderRadius: uiColorThemeHelper.radii[value],
     }),
+  },
+});
+
+export const globalStyles = globalCss({
+  '@font-face': {
+    fontFamily: 'Roboto',
+    fontWeight: 500,
+    src: 'url("/static/fonts/Roboto/Roboto-Medium")',
   },
 });
