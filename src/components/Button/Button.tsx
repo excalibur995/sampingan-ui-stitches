@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Spinner from '../Spinner';
 import { styled } from '../../theme';
 import { ButtonProps, buttonDefaultProps } from './Button.types';
-import { cssImplicator } from './Button.helper';
-import { SampinganUiSizes } from '../../types/index.types';
+import {
+  SampinganUIButtonVariant,
+  SampinganUiSizes,
+} from '../../types/index.types';
 import { useTypographyInk } from '../../utils/helper';
+import { spinnerDefaultProps } from '../Spinner/Spinner.types';
 
 const ButtonContainer = styled('button', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   radius: 'semi-rounded',
   border: 'none',
   textAlign: 'center',
   whiteSpace: 'nowrap',
+  transition: 'all 0.3s ease',
   variants: {
     block: {
       true: {
@@ -19,38 +26,49 @@ const ButtonContainer = styled('button', {
     },
     size: {
       small: {
-        minWidth: 58,
+        minWidth: 68,
         height: 30,
       },
-      medium: {
-        minWidth: 72,
-        height: 40,
-      },
       large: {
-        minWidth: 96,
-        height: 56,
+        minWidth: 84,
+        height: 52,
       },
     },
     type: {
       primary: {
-        // todo!
+        border: 'none !important',
       },
       secondary: {
-        // todo!
+        background: 'transparent !important',
+        border: 'thin solid #000',
+        '&:disabled': {
+          border: 'thin solid #cccccc',
+          color: '#cccccc !important',
+        },
       },
       tertiary: {
-        // todo!
+        background: '#F0F0F0',
+        color: '$kerjaan_neutral',
       },
-      ghost: {},
+      ghost: {
+        background: 'none',
+        border: 'none',
+        color: '$kerjaan_neutral !important',
+        '&:disabled': {
+          width: 'fit-content',
+          background: 'none',
+          color: '#cccccc !important',
+        },
+      },
     },
   },
   '&:disabled': {
-    '	background-color': '#cccccc',
+    backgroundColor: '#cccccc',
+    cursor: 'not-allowed',
   },
   '&:active': {
     opacity: 0.3,
   },
-  transition: 'all 0.5s ease',
   color: '$kerjaan_white',
   defaultVariants: {
     type: buttonDefaultProps.type,
@@ -61,12 +79,35 @@ const ButtonContainer = styled('button', {
 
 const SpinnerContainer = styled('span', {
   display: 'inline-block',
-  verticalAlign: 'sub',
-  transition: 'margin 0.5s ease',
+  transition: 'inherit',
+  opacity: 1,
   variants: {
     loading: {
       true: {
-        mx: '8px',
+        marginRight: '8px',
+      },
+      false: {
+        marginRight: '0',
+        opacity: 0,
+      },
+    },
+  },
+  defaultVariants: {
+    loading: false,
+  },
+});
+
+const IconContainer = styled('div', {
+  display: 'inherit',
+  position: 'relative',
+  transition: 'inherit',
+  margin: ' 0 2px',
+  opacity: 1,
+  variants: {
+    loading: {
+      true: {
+        margin: '0',
+        opacity: 0,
       },
     },
   },
@@ -76,15 +117,12 @@ const SpinnerContainer = styled('span', {
 });
 
 function LoadingConditionContainer(props: ButtonProps) {
-  const { loading, children, size, loadingInk } = props;
-  const sizes: SampinganUiSizes = loading
-    ? size ?? buttonDefaultProps.size
-    : 'none';
-
+  const { loading, children, size, color } = props;
+  const sizes: SampinganUiSizes = size ?? spinnerDefaultProps.size;
   return (
     <React.Fragment>
       <SpinnerContainer loading={loading}>
-        <Spinner size={sizes} color={loadingInk} />
+        {loading && <Spinner size={sizes} color={color} />}
       </SpinnerContainer>
       {children}
     </React.Fragment>
@@ -102,17 +140,31 @@ export const Button = (props: ButtonProps) => {
     ink,
     system,
     disabled,
+    rightIcon,
+    leftIcon,
+    loading,
   } = props;
 
-  const cssComposer = React.useMemo(() => cssImplicator(props), [props]);
+  const systemButtonInk = useMemo(
+    () => useTypographyInk(system, ink),
+    [system, ink]
+  );
 
-  const buttonInk = useTypographyInk(system, ink);
+  console.log(rightIcon);
+  const buttonInk = useMemo(() => {
+    const whitelist: SampinganUIButtonVariant[] = ['ghost', 'tertiary'];
+    if (type && !whitelist.includes(type)) {
+      return systemButtonInk;
+    }
+    return;
+  }, [type, system, ink]);
   return (
     <ButtonContainer
       id={id}
       css={{
         background: buttonInk,
-        ...cssComposer,
+        borderColor: buttonInk,
+        color: type === 'secondary' ? buttonInk : '$kerjaan_white',
         ...inlineStyle,
       }}
       disabled={disabled}
@@ -120,9 +172,15 @@ export const Button = (props: ButtonProps) => {
       block={block}
       type={type}
     >
+      <IconContainer loading={loading}>
+        {leftIcon && !loading && React.cloneElement(leftIcon)}
+      </IconContainer>
       <LoadingConditionContainer {...props}>
         {children}
       </LoadingConditionContainer>
+      <IconContainer>
+        {rightIcon && React.cloneElement(rightIcon)}
+      </IconContainer>
     </ButtonContainer>
   );
 };

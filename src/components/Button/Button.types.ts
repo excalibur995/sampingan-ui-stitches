@@ -9,7 +9,7 @@ import {
 } from '../../types/index.types';
 import { SpinnerProps } from '../Spinner/Spinner.types';
 
-export type ButtonSizes = Exclude<SampinganUiSizes, 'none'>;
+export type ButtonSizes = Exclude<SampinganUiSizes, 'none' | 'medium'>;
 
 export interface ButtonProps extends SpinnerProps, GlobalComponentTypes {
   /**
@@ -37,35 +37,40 @@ export interface ButtonProps extends SpinnerProps, GlobalComponentTypes {
    */
   block?: boolean;
   /**
-   * indicates the feedback of the button
-   */
-  feedback?: SaminganUiFeedback;
-  /**
    * indicates the role of system
    */
   system?: SampinganUISystem;
   /**
    * indicates the color of Button
    */
-  ink?: SampinganUIVariant;
+  ink?: Extract<SampinganUIVariant, 'primary' | 'positive' | 'negative'>;
   /**
-   * Indicate Spinner Color
+   * Button right icon
    */
-  loadingInk?: SampinganColorVariant;
+  rightIcon?: JSX.Element | null;
+  /**
+   * Button left icon
+   */
+  leftIcon?: JSX.Element | null;
+  /**
+   * indicates the feedback of the button
+   */
+  // feedback?: SaminganUiFeedback;
 }
 
-export const buttonDefaultProps: Required<ButtonProps> = {
+export const buttonDefaultProps: ButtonProps = {
   id: 'sampingan--button',
   type: 'primary',
-  size: 'medium',
+  size: 'small',
   children: '',
   loading: false,
   disabled: false,
-  color: 'sampingan_primary',
+  color: 'sampingan_white',
   inlineStyle: {},
   block: false,
-  feedback: 'neutral',
+  // feedback: 'neutral',
   system: 'Sampingan',
   ink: 'primary',
-  loadingInk: 'sampingan_white',
+  rightIcon: null,
+  leftIcon: null,
 };
