@@ -91,6 +91,7 @@ export type SaminganUiFeedback =
   | 'warning';
 export type SampinganUIStates = 'active' | 'inactive' | 'disabled';
 
+export type SampinganUIElevation = 'thin' | 'interactive' | 'hover' | 'float';
 export type SampinganUIIcon =
   | 'Warning'
   | 'Positive'
