@@ -91,6 +91,14 @@ export type SaminganUiFeedback =
   | 'warning';
 export type SampinganUIStates = 'active' | 'inactive' | 'disabled';
 
+export type SampinganUIIcon =
+  | 'Warning'
+  | 'Positive'
+  | 'Informative'
+  | 'Failed'
+  | 'Profile'
+  | 'Close';
+
 export type SampinganUIBaseClick<T> = React.MouseEventHandler<T>;
 export interface GlobalComponentTypes {
   /**
