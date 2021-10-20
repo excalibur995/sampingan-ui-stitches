@@ -150,7 +150,6 @@ export const Button = (props: ButtonProps) => {
     [system, ink]
   );
 
-  console.log(rightIcon);
   const buttonInk = useMemo(() => {
     const whitelist: SampinganUIButtonVariant[] = ['ghost', 'tertiary'];
     if (type && !whitelist.includes(type)) {

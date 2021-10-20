@@ -1,6 +1,6 @@
 import { createStitches } from '@stitches/react';
 import { SampinganRadii, SampinganUIElevation } from '../types/index.types';
-import { uiColorThemeHelper } from '../utils/helper';
+import { uiThemeHelper } from '../utils/helper';
 export const { styled, css, keyframes, globalCss, getCssText } = createStitches(
   {
     theme: {
@@ -9,7 +9,7 @@ export const { styled, css, keyframes, globalCss, getCssText } = createStitches(
         roboto: 'Roboto, sans-serif',
       },
       colors: {
-        ...uiColorThemeHelper.colors,
+        ...uiThemeHelper.colors,
       },
       radii: {
         rounded: '9999px',
@@ -42,7 +42,7 @@ export const { styled, css, keyframes, globalCss, getCssText } = createStitches(
         height: value,
       }),
       radius: (value: SampinganRadii) => ({
-        borderRadius: uiColorThemeHelper.radii[value],
+        borderRadius: uiThemeHelper.radii[value],
       }),
     },
   }

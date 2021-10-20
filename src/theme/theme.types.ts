@@ -24,4 +24,5 @@ export interface SampinganUiFontInterface {
   fontSize: SaminganFontSizes;
   lineHeight: SaminganLineHeight;
   fontWeight: SampinganFontWeight;
+  fontFamily: 'sans-serif';
 }

@@ -16,6 +16,8 @@ export const Icon = ({ icon, width, height, ...props }: IconProperties) => {
       Positive: <Icons.Positive />,
       Profile: <Icons.Profile />,
       Warning: <Icons.Warning />,
+      Indeterminate: <Icons.Indeterminate />,
+      Check: <Icons.Check />,
     };
   }, [icon]);
 

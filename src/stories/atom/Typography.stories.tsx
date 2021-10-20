@@ -6,7 +6,7 @@ import {
   typographyDefaultProps,
 } from '../../components/Typography/Typoghraphy.types';
 import { SampinganFontSizeVariant } from '../../types/index.types';
-import { uiColorThemeHelper } from '../..//utils/helper';
+import { uiThemeHelper } from '../..//utils/helper';
 
 export default {
   title: 'Atom/Typography',
@@ -26,7 +26,7 @@ interface VariantProps {
 }
 
 const VariantDetail = ({ detail, variant }: VariantProps) => {
-  const theme = uiColorThemeHelper.font[variant][detail];
+  const theme = uiThemeHelper.font[variant][detail];
   const text = detail.replace(/[A-Z]/g, (letter) => ` ${letter}`);
   return (
     <div>
@@ -38,7 +38,7 @@ const VariantDetail = ({ detail, variant }: VariantProps) => {
 };
 
 export const Variants: Story<TypographyProps> = () => {
-  const availableFonts = Object.keys(uiColorThemeHelper.font);
+  const availableFonts = Object.keys(uiThemeHelper.font);
   return (
     <React.Fragment>
       {availableFonts.map((font_variant) => (

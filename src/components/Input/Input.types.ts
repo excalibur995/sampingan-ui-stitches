@@ -62,7 +62,7 @@ export interface InputProps extends GlobalComponentTypes {
   suffix?: React.ReactNode;
   /**
    * specifies a regular expression that
-   * the <input> element's value is checked against on form submission
+   * the input element's value is checked against on form submission
    */
   pattern?: string;
   /**

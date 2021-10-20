@@ -1,11 +1,7 @@
 import React, { useMemo } from 'react';
 import { styled } from '../../theme';
 import { SampinganColorVariant } from '../../types/index.types';
-import {
-  hexToRGB,
-  uiColorThemeHelper,
-  useTypographyInk,
-} from '../../utils/helper';
+import { hexToRGB, uiThemeHelper, useTypographyInk } from '../../utils/helper';
 import { ChipsProps, defaultChipsProps } from './Chips.types';
 
 const Wrapper = styled('div', {
@@ -87,8 +83,7 @@ export const Chips = ({
       const slicedInk = inks.slice(1) as SampinganColorVariant;
       const isWhite =
         slicedInk === 'sampingan_white' || slicedInk === 'kerjaan_white';
-      const hexRgbColor =
-        uiColorThemeHelper.colors[slicedInk ?? 'kerjaan_primary'];
+      const hexRgbColor = uiThemeHelper.colors[slicedInk ?? 'kerjaan_primary'];
       return {
         backgroundColor: hexToRGB(hexRgbColor, 0.1),
         color: isWhite ? '#000' : inks,

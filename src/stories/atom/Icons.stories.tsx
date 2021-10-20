@@ -21,6 +21,8 @@ export const Basic: Story<IconProperties> = ({ icon, ...props }) => {
     'Informative',
     'Failed',
     'Close',
+    'Indeterminate',
+    'Check',
   ];
   return (
     <React.Fragment>
