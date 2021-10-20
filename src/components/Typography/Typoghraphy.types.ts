@@ -34,7 +34,7 @@ export const typographyDefaultProps: Required<TypographyProps> = {
   inlineStyle: {},
   system: 'Sampingan',
   ink: 'neutral',
-  variant: 'caption-1',
+  variant: 'caption-2',
   children: '',
   transform: 'none',
 };

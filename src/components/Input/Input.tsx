@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FocusEventHandler, FormEvent } from 'react';
 import { styled } from '../../theme';
 import { defaultInputProps, InputProps } from './Input.types';
-import { uiColorThemeHelper } from '../../utils/helper';
+import { uiThemeHelper } from '../../utils/helper';
 
 const InputWrapper = styled('div', {
   display: 'flex',
@@ -10,9 +10,10 @@ const InputWrapper = styled('div', {
 });
 
 const InputLabel = styled('label', {
-  ...uiColorThemeHelper.font['body-2'],
+  ...uiThemeHelper.font['body-2'],
   color: '#454F57',
   fontFamily: '$roboto',
+  fontWeight: 'bold',
 });
 
 const SampinganInputContainer = styled('section', {
@@ -52,7 +53,7 @@ const SampinganInput = styled('input', {
   '&::placeholder': {
     color: '#9EABB5',
     opacity: 1,
-    ...uiColorThemeHelper.font['body-2'],
+    ...uiThemeHelper.font['body-2'],
   },
 });
 
@@ -66,7 +67,7 @@ const CaptionWrapper = styled('div', {
 });
 
 const Caption = styled('span', {
-  ...uiColorThemeHelper.font['caption-3'],
+  ...uiThemeHelper.font['caption-3'],
   fontFamily: '$roboto',
   color: '#A9ADB0',
 });

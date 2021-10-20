@@ -8,7 +8,7 @@ export interface SpinnerProps extends GlobalComponentTypes {
   /**
    * Indicate Spinner Size
    */
-  size?: SampinganUiSizes;
+  size?: Exclude<SampinganUiSizes, 'xsmall' | 'xlarge'>;
   /**
    * Indicate Spinner Color
    */

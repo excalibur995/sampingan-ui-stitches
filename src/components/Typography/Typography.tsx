@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '../../theme/index';
-import { uiColorThemeHelper } from '../../utils/helper';
+import { uiThemeHelper } from '../../utils/helper';
 import { typographyDefaultProps, TypographyProps } from './Typoghraphy.types';
 import { useVariantTag, useTypographyInk } from '../../utils/helper';
 
@@ -8,7 +8,7 @@ const TypographyContent = styled('span', {
   variants: {
     //@ts-ignore
     variant: {
-      ...uiColorThemeHelper.font,
+      ...uiThemeHelper.font,
     },
   },
   defaultVariants: {

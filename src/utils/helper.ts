@@ -18,6 +18,18 @@ export const svgrDefaultProperties: SVGR = {
   height: 24,
 };
 
+export const getUserInital = (name?: string) => {
+  if (name) {
+    const rgx = new RegExp(/(\p{L}{1})\p{L}+/, 'gu');
+    const initials = [...name.matchAll(rgx)] || [];
+    return (
+      (initials.shift()?.[1] || '') + (initials.pop()?.[1] || '')
+    ).toUpperCase();
+  }
+
+  return name;
+};
+
 export const useTypographyInk = (system?: System, ink?: Ink): CV => {
   if (!system || !ink) {
     const default_role = system ?? typographyDefaultProps.system;
@@ -73,7 +85,7 @@ export function isIcon(value: string): value is SampinganUIIcon {
   return listOfIcons.includes(value as SampinganUIIcon);
 }
 
-export const uiColorThemeHelper: SampinganUITheme = {
+export const uiThemeHelper: SampinganUITheme = {
   colors: {
     // Kerjaan
     kerjaan_primary: '#0492F7',
@@ -97,53 +109,62 @@ export const uiColorThemeHelper: SampinganUITheme = {
       fontSize: '2rem',
       fontWeight: 700,
       lineHeight: '40px',
+      fontFamily: 'sans-serif',
     },
     hero: {
       fontSize: '1.5rem',
       fontWeight: 700,
       lineHeight: '28px',
+      fontFamily: 'sans-serif',
     },
     header: {
       fontSize: '1rem',
       fontWeight: 700,
       lineHeight: '20px',
+      fontFamily: 'sans-serif',
     },
     'body-1': {
       fontSize: '0.875rem',
       fontWeight: 700,
       lineHeight: '20px',
+      fontFamily: 'sans-serif',
     },
     'body-2': {
       fontSize: '0.875rem',
       fontWeight: 500,
       lineHeight: '20px',
+      fontFamily: 'sans-serif',
     },
     'body-3': {
       fontSize: '0.875rem',
       fontWeight: 400,
       lineHeight: '20px',
+      fontFamily: 'sans-serif',
     },
     'caption-1': {
       fontSize: '0.75rem',
       fontWeight: 700,
       lineHeight: '16px',
+      fontFamily: 'sans-serif',
     },
     'caption-2': {
       fontSize: '0.75rem',
       fontWeight: 500,
       lineHeight: '16px',
+      fontFamily: 'sans-serif',
     },
     'caption-3': {
       fontSize: '0.75rem',
       fontWeight: 400,
       lineHeight: '16px',
+      fontFamily: 'sans-serif',
     },
   },
   radii: {
     'rounded-none': '0px',
-    'semi-rounded': '4px',
+    'semi-rounded': '6px',
     'rounded-full': '9999px',
-    rounded: '10px',
+    rounded: '12px',
     chips: '36px',
   },
 };

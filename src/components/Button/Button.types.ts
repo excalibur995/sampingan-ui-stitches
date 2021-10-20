@@ -9,7 +9,10 @@ import {
 } from '../../types/index.types';
 import { SpinnerProps } from '../Spinner/Spinner.types';
 
-export type ButtonSizes = Exclude<SampinganUiSizes, 'none' | 'medium'>;
+export type ButtonSizes = Exclude<
+  SampinganUiSizes,
+  'none' | 'medium' | 'xlarge' | 'xsmall'
+>;
 
 export interface ButtonProps extends SpinnerProps, GlobalComponentTypes {
   /**

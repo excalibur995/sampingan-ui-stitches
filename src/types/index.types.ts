@@ -61,7 +61,14 @@ export type SampinganUIInputTypes =
   | 'url';
 
 export type SampinganChipsVariants = 'text-only' | 'removeable';
-export type SampinganUiSizes = 'none' | 'small' | 'medium' | 'large';
+export type SampinganUiSizes =
+  | 'none'
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge';
+
 export type SaminganFontSizes =
   | '0.75rem' // 12px
   | '0.875rem' // 14px
@@ -77,12 +84,13 @@ export type SaminganLineHeight =
   | '28px'
   | '40px';
 export type SampinganFontWeight = 400 | 500 | 700;
+export type SampinganCheckedState = boolean | 'indeterminate';
 export type SampinganRadii =
   | 'rounded-none'
   | 'semi-rounded'
-  | 'chips'
   | 'rounded'
-  | 'rounded-full';
+  | 'rounded-full'
+  | 'chips';
 export type SaminganUiFeedback =
   | 'neutral'
   | 'high-priority'
@@ -90,15 +98,25 @@ export type SaminganUiFeedback =
   | 'negative'
   | 'warning';
 export type SampinganUIStates = 'active' | 'inactive' | 'disabled';
-
+export type SampinganImageFit =
+  | 'fill'
+  | 'contain'
+  | 'cover'
+  | 'none'
+  | 'scale-down'
+  | 'contain'
+  | 'inherit';
+export type SampinganUIElevation = 'thin' | 'interactive' | 'hover' | 'float';
 export type SampinganUIIcon =
   | 'Warning'
   | 'Positive'
   | 'Informative'
   | 'Failed'
   | 'Profile'
-  | 'Close';
-
+  | 'Close'
+  | 'Check'
+  | 'Indeterminate';
+export type SampinganImageStatus = 'idle' | 'loading' | 'loaded' | 'error';
 export type SampinganUIBaseClick<T> = React.MouseEventHandler<T>;
 export interface GlobalComponentTypes {
   /**
