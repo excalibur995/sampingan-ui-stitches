@@ -14,6 +14,7 @@ export type SampinganColorVariant =
   | 'R500'
   | 'R900'
   | 'N50'
+  | 'N100'
   | 'N200'
   | 'N400'
   | 'N600'
