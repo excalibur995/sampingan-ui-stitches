@@ -23,43 +23,42 @@ export const OnClickExample: Story<ChipsProps> = () => {
   const [listContainer, setListContainer] = React.useState<ChipsProps[]>([
     {
       children: 'Chips 1',
-      ink: 'primary',
-      system: 'Kerjaan',
+      ink: 'B500',
+
       states: 'active',
       variants: 'removeable',
     },
     {
       children: 'Chips 2',
-      ink: 'secondary',
-      system: 'Kerjaan',
+      ink: 'Y500',
+
       states: 'active',
       variants: 'removeable',
     },
     {
       children: 'Chips 3',
-      ink: 'primary',
-      system: 'Sampingan',
+      ink: 'R500',
       states: 'active',
       variants: 'removeable',
     },
     {
       children: 'Chips 4',
-      ink: 'secondary',
-      system: 'Kerjaan',
+      ink: 'G500',
+
       states: 'inactive',
       variants: 'text-only',
     },
     {
       children: 'Chips 5',
-      ink: 'secondary',
-      system: 'Kerjaan',
+      ink: 'N600',
+
       states: 'disabled',
       variants: 'removeable',
     },
     {
       children: 'Chips 6',
-      ink: 'positive',
-      system: 'Kerjaan',
+      ink: 'N50',
+
       states: 'active',
       variants: 'text-only',
     },

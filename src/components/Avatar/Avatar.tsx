@@ -87,12 +87,15 @@ export const Avatar = ({
   id,
   src,
   size,
-  onClick,
+  className,
+  imgClass,
+  usernameClass,
   username,
   radius,
-  onLoadingStatusChange,
   elevation,
   fit,
+  onClick,
+  onLoadingStatusChange,
 }: AvatarProps) => {
   const onUserAvatarClick = () => onClick && onClick();
   const handleLoadChange = (status: SampinganImageStatus) =>
@@ -104,6 +107,7 @@ export const Avatar = ({
         radius,
         elevation,
       }}
+      className={className}
       size={size}
       onClick={onUserAvatarClick}
     >
@@ -112,13 +116,16 @@ export const Avatar = ({
           onLoadingStatusChange={handleLoadChange}
           src={src}
           alt={username ? username : alt}
+          className={imgClass}
           css={{
             objectFit: fit,
           }}
         />
       )}
       {!src && (
-        <AvatarUsername size={size}>{getUserInital(username)}</AvatarUsername>
+        <AvatarUsername className={usernameClass} size={size}>
+          {getUserInital(username)}
+        </AvatarUsername>
       )}
     </AvatarContainer>
   );

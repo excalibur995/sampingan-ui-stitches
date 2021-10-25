@@ -2,9 +2,8 @@ import React from 'react';
 import {
   GlobalComponentTypes,
   SampinganChipsVariants,
+  SampinganColorVariant,
   SampinganUIStates,
-  SampinganUISystem,
-  SampinganUIVariant,
 } from '../../types/index.types';
 export interface ChipsProps extends GlobalComponentTypes {
   /**
@@ -20,13 +19,9 @@ export interface ChipsProps extends GlobalComponentTypes {
    */
   states?: SampinganUIStates;
   /**
-   * Components Role, decide component what project user in
-   */
-  system?: SampinganUISystem;
-  /**
    * Color for the Chips
    */
-  ink?: SampinganUIVariant;
+  ink?: SampinganColorVariant;
   /**
    * Chips content or Tag
    */
@@ -40,11 +35,11 @@ export interface ChipsProps extends GlobalComponentTypes {
 export const defaultChipsProps: Required<ChipsProps> = {
   id: 'sampingan--chips',
   tagId: 'chips--tag',
+  className: '',
   inlineStyle: {},
   variants: 'removeable',
   states: 'active',
-  system: 'Kerjaan',
-  ink: 'primary',
+  ink: 'B500',
   children: null,
   onCloseClick: () => {},
 };

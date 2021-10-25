@@ -45,11 +45,21 @@ export interface AvatarProps extends GlobalComponentTypes {
    * This is useful in case you want to control more precisely what to render as the image is loading.
    */
   onLoadingStatusChange?: (status: SampinganImageStatus) => void;
+  /**
+   * a Class for `img` attribute
+   */
+  imgClass?: string;
+  /**
+   * a Class for Text-Only avatar
+   */
+  usernameClass?: string;
 }
 
 export const avatarDefaultProps: AvatarProps = {
   id: 'sampingan-avatar',
   inlineStyle: {},
+  className: undefined,
+  imgClass: undefined,
   onClick: undefined,
   onLoadingStatusChange: undefined,
   size: 'large',

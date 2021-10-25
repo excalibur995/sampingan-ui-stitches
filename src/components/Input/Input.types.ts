@@ -91,6 +91,7 @@ export interface InputProps extends GlobalComponentTypes {
 export const defaultInputProps: Required<InputProps> = {
   id: 'sampingan-input',
   name: 'sampingan--input--name',
+  className: '',
   inlineStyle: {},
   placeholder: 'Placeholder text here',
   sizes: 'small',

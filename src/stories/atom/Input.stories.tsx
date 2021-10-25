@@ -62,7 +62,7 @@ WithLabelAndCaption.args = {
 PrefixAndSuffix.args = {
   ...defaultInputProps,
   prefix: <button onClick={() => alert('Touch Suffix')}>Touch me</button>,
-  suffix: <Spinner color="kerjaan_primary" />,
+  suffix: <Spinner color="B500" />,
   onChange,
 };
 MaxMin.args = {

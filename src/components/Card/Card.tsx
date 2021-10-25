@@ -11,9 +11,23 @@ const StyledCard = styled('div', {
   margin: 0,
 });
 
-export const Card = ({ id, children, elevation, inlineStyle }: CardProps) => {
+export const Card = ({
+  id,
+  children,
+  elevation,
+  inlineStyle,
+  className,
+  onClick,
+}: CardProps) => {
+  const handleClick = () => onClick && onClick();
+
   return (
-    <StyledCard id={id} css={{ ...inlineStyle, elevation }}>
+    <StyledCard
+      id={id}
+      onClick={handleClick}
+      className={className}
+      css={{ ...inlineStyle, elevation }}
+    >
       {children}
     </StyledCard>
   );

@@ -10,9 +10,13 @@ export interface CardProps extends GlobalComponentTypes {
    */
   children?: React.ReactNode;
   /**
-   * indicates like how far card from the ground
+   * Indicates like how far card from the ground
    */
   elevation?: SampinganUIElevation;
+  /**
+   * Event handler called when the Card Click.
+   */
+  onClick?: () => void;
 }
 
 export const cardDefaultProps: CardProps = {
@@ -20,4 +24,6 @@ export const cardDefaultProps: CardProps = {
   elevation: 'interactive',
   id: 'sampingan-ui-card',
   inlineStyle: {},
+  className: '',
+  onClick: undefined,
 };

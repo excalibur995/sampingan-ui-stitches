@@ -6,7 +6,6 @@ import {
   SampinganUIButtonVariant,
   SampinganUiSizes,
 } from '../../types/index.types';
-import { useTypographyInk } from '../../utils/helper';
 import { spinnerDefaultProps } from '../Spinner/Spinner.types';
 
 const ButtonContainer = styled('button', {
@@ -138,32 +137,26 @@ export const Button = (props: ButtonProps) => {
     block,
     inlineStyle,
     ink,
-    system,
     disabled,
     rightIcon,
     leftIcon,
     loading,
   } = props;
 
-  const systemButtonInk = useMemo(
-    () => useTypographyInk(system, ink),
-    [system, ink]
-  );
-
   const buttonInk = useMemo(() => {
     const whitelist: SampinganUIButtonVariant[] = ['ghost', 'tertiary'];
     if (type && !whitelist.includes(type)) {
-      return systemButtonInk;
+      return `$${ink}`;
     }
     return;
-  }, [type, system, ink]);
+  }, [type, ink]);
   return (
     <ButtonContainer
       id={id}
       css={{
         background: buttonInk,
         borderColor: buttonInk,
-        color: type === 'secondary' ? buttonInk : '$kerjaan_white',
+        color: type === 'secondary' ? buttonInk : '$N50',
         ...inlineStyle,
       }}
       disabled={disabled}

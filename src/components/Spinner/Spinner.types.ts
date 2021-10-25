@@ -18,6 +18,7 @@ export interface SpinnerProps extends GlobalComponentTypes {
 export const spinnerDefaultProps: Required<SpinnerProps> = {
   id: 'spinner--id',
   size: 'small',
-  color: 'sampingan_white',
+  color: 'N50',
   inlineStyle: {},
+  className: '',
 };

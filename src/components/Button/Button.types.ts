@@ -3,9 +3,7 @@ import {
   SaminganUiFeedback,
   SampinganColorVariant,
   SampinganUIButtonVariant,
-  SampinganUISystem,
   SampinganUiSizes,
-  SampinganUIVariant,
 } from '../../types/index.types';
 import { SpinnerProps } from '../Spinner/Spinner.types';
 
@@ -40,13 +38,9 @@ export interface ButtonProps extends SpinnerProps, GlobalComponentTypes {
    */
   block?: boolean;
   /**
-   * indicates the role of system
+   * indicates the variants of Button
    */
-  system?: SampinganUISystem;
-  /**
-   * indicates the color of Button
-   */
-  ink?: Extract<SampinganUIVariant, 'primary' | 'positive' | 'negative'>;
+  ink?: SampinganColorVariant;
   /**
    * Button right icon
    */
@@ -68,12 +62,11 @@ export const buttonDefaultProps: ButtonProps = {
   children: '',
   loading: false,
   disabled: false,
-  color: 'sampingan_white',
+  color: 'N50',
   inlineStyle: {},
   block: false,
   // feedback: 'neutral',
-  system: 'Sampingan',
-  ink: 'primary',
+  ink: 'B500',
   rightIcon: null,
   leftIcon: null,
 };

@@ -19,7 +19,6 @@ export const Basic = Template.bind({});
 export const onClick: Story<ToggleProps> = (props) => {
   const [state, setstate] = useState(false);
   const handleToggle = (toggle: boolean) => {
-    action('handleToggleChange');
     setstate(toggle);
     alert(`toggle is ${toggle}`);
   };
@@ -33,4 +32,5 @@ export const onClick: Story<ToggleProps> = (props) => {
 
 Basic.args = {
   ...defaultToggleProps,
+  defaultChecked: true,
 };

@@ -65,7 +65,7 @@ export const Toggle = React.forwardRef<HTMLButtonElement, ToggleProps>(
           ...inlineStyle,
         }}
       >
-        <ToggleThumb />
+        <ToggleThumb defaultChecked={defaultChecked} />
       </ToggleContainer>
     );
   }

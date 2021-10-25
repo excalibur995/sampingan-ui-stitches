@@ -15,7 +15,7 @@ export const Undefined_Color = Template.bind({});
 
 Basic.args = {
   size: 'small',
-  color: 'kerjaan_primary',
+  color: 'B500',
 };
 
 Undefined_Color.args = {

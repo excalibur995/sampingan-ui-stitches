@@ -1,16 +1,6 @@
-import { typographyDefaultProps } from '../components/Typography/Typoghraphy.types';
 import { SampinganUITheme } from '../theme/theme.types';
-import {
-  SampinganUISystem,
-  SampinganUIVariant,
-  SampinganColorVariant,
-  SampinganFontSizeVariant,
-  SampinganUIIcon,
-} from '../types/index.types';
+import { SampinganFontSizeVariant } from '../types/index.types';
 
-type CV = SampinganColorVariant;
-type Ink = SampinganUIVariant;
-type System = SampinganUISystem;
 type SVGR = React.SVGProps<SVGSVGElement>;
 
 export const svgrDefaultProperties: SVGR = {
@@ -30,15 +20,6 @@ export const getUserInital = (name?: string) => {
   return name;
 };
 
-export const useTypographyInk = (system?: System, ink?: Ink): CV => {
-  if (!system || !ink) {
-    const default_role = system ?? typographyDefaultProps.system;
-    const default_ink = ink ?? typographyDefaultProps.ink;
-    return `$${default_role}_${default_ink}`.toLowerCase() as CV;
-  }
-  return `$${system}_${ink}`.toLowerCase() as CV;
-};
-
 export const useVariantTag = (variant: SampinganFontSizeVariant) => {
   const variantTag = variant.substring(0, variant.indexOf('-'));
 
@@ -54,17 +35,6 @@ export const useVariantTag = (variant: SampinganFontSizeVariant) => {
   }
 };
 
-export const randomId = () => {
-  let result = '';
-  const characters =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@!#$%^&*()_+';
-  const charactersLength = characters.length;
-  for (let i = 0; i < characters.length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-};
-
 export const hexToRGB = (hex: string, alpha: number) => {
   const r = parseInt(hex.slice(1, 3), 16),
     g = parseInt(hex.slice(3, 5), 16),
@@ -73,36 +43,40 @@ export const hexToRGB = (hex: string, alpha: number) => {
   return 'rgb(' + r + ', ' + g + ', ' + b + ')';
 };
 
-export function isIcon(value: string): value is SampinganUIIcon {
-  const listOfIcons: SampinganUIIcon[] = [
-    'Warning',
-    'Profile',
-    'Positive',
-    'Informative',
-    'Failed',
-    'Close',
-  ];
-  return listOfIcons.includes(value as SampinganUIIcon);
-}
-
 export const uiThemeHelper: SampinganUITheme = {
   colors: {
-    // Kerjaan
-    kerjaan_primary: '#0492F7',
-    kerjaan_secondary: '#F76904',
-    kerjaan_positive: '#2A9D90',
-    kerjaan_negative: '#E50013',
-    kerjaan_warning: '#F6B700',
-    kerjaan_neutral: '#333A3F',
-    kerjaan_white: '#fff',
-    // Sampingan
-    sampingan_primary: '#F9C45F',
-    sampingan_secondary: '#5F95F9',
-    sampingan_positive: '#2A9D90',
-    sampingan_negative: '#E50013',
-    sampingan_warning: '#F9EA5F',
-    sampingan_neutral: '#262626',
-    sampingan_white: '#fff',
+    /**
+     * Blue Section
+     */
+    B50: '#E2F4FA',
+    B500: '#3DA5D9',
+    B900: '#215581',
+    /**
+     * Yellow Section
+     */
+    Y50: '#FFF8E1',
+    Y500: '#FEC209',
+    Y900: '#DC5F00',
+    /**
+     * Green Section
+     */
+    G50: '#E2F3F2',
+    G500: '#2A9D90',
+    G900: '#195347',
+    /**
+     * Red Section
+     */
+    R50: '#FFEBEE',
+    R500: '#E83730',
+    R900: '#BA1816',
+    /**
+     * Neutral Section
+     */
+    N50: '#FFFFFF',
+    N200: '#ECECEC',
+    N400: '#C4C4C4',
+    N600: '#9B9B9B',
+    N900: '#262626',
   },
   font: {
     title: {
