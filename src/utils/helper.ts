@@ -73,6 +73,7 @@ export const uiThemeHelper: SampinganUITheme = {
      * Neutral Section
      */
     N50: '#FFFFFF',
+    N100: '#F7F7F7',
     N200: '#ECECEC',
     N400: '#C4C4C4',
     N600: '#9B9B9B',
