@@ -1,22 +1,23 @@
 import React from 'react';
 
-export type SampinganUISystem = 'Kerjaan' | 'Sampingan';
-
 export type SampinganColorVariant =
-  | 'kerjaan_primary'
-  | 'kerjaan_secondary'
-  | 'kerjaan_positive'
-  | 'kerjaan_negative'
-  | 'kerjaan_warning'
-  | 'kerjaan_neutral'
-  | 'kerjaan_white'
-  | 'sampingan_primary'
-  | 'sampingan_secondary'
-  | 'sampingan_positive'
-  | 'sampingan_negative'
-  | 'sampingan_warning'
-  | 'sampingan_neutral'
-  | 'sampingan_white';
+  | 'B50'
+  | 'B500'
+  | 'B900'
+  | 'Y50'
+  | 'Y500'
+  | 'Y900'
+  | 'G50'
+  | 'G500'
+  | 'G900'
+  | 'R50'
+  | 'R500'
+  | 'R900'
+  | 'N50'
+  | 'N200'
+  | 'N400'
+  | 'N600'
+  | 'N900';
 
 export type SampinganUIVariant =
   | 'primary'
@@ -127,4 +128,8 @@ export interface GlobalComponentTypes {
    * Indicate component inline style extra
    */
   inlineStyle?: React.CSSProperties;
+  /**
+   * Indicate component class
+   */
+  className?: string;
 }

@@ -57,7 +57,7 @@ export const defaultCheckboxProps: CheckboxProps = {
   name: 'checbox',
   required: false,
   defaultChecked: false,
-  ink: 'kerjaan_primary',
+  ink: 'B500',
   onChecked: () => null,
   children: undefined,
 };

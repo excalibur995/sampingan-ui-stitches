@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '../../theme/index';
 import { uiThemeHelper } from '../../utils/helper';
 import { typographyDefaultProps, TypographyProps } from './Typoghraphy.types';
-import { useVariantTag, useTypographyInk } from '../../utils/helper';
+import { useVariantTag } from '../../utils/helper';
 
 const TypographyContent = styled('span', {
   variants: {
@@ -17,7 +17,6 @@ const TypographyContent = styled('span', {
 });
 
 export const Typography = ({
-  system,
   ink,
   variant,
   transform,
@@ -26,7 +25,6 @@ export const Typography = ({
   inlineStyle,
 }: TypographyProps) => {
   const typoTag = useVariantTag(variant ?? typographyDefaultProps.variant);
-  const typographyInk = useTypographyInk(system, ink);
 
   return (
     <TypographyContent
@@ -35,7 +33,7 @@ export const Typography = ({
       variant={variant}
       css={{
         textTransform: transform,
-        color: typographyInk,
+        color: `$${ink}`,
         fontFamily: '$mono',
         ...inlineStyle,
       }}

@@ -1,9 +1,8 @@
 import {
   GlobalComponentTypes,
+  SampinganColorVariant,
   SampinganFontSizeVariant,
   SampinganTextTransform,
-  SampinganUISystem,
-  SampinganUIVariant,
 } from '../../types/index.types';
 
 export interface TypographyProps extends GlobalComponentTypes {
@@ -12,13 +11,9 @@ export interface TypographyProps extends GlobalComponentTypes {
    */
   children?: React.ReactNode;
   /**
-   * Components Role, decide component what project user in
-   */
-  system?: SampinganUISystem;
-  /**
    * Text Color for the text
    */
-  ink?: SampinganUIVariant;
+  ink?: SampinganColorVariant;
   /**
    * Define text sizes, line height, font weight
    */
@@ -31,9 +26,9 @@ export interface TypographyProps extends GlobalComponentTypes {
 
 export const typographyDefaultProps: Required<TypographyProps> = {
   id: 'sampingan-typo',
+  className: '',
   inlineStyle: {},
-  system: 'Sampingan',
-  ink: 'neutral',
+  ink: 'N900',
   variant: 'caption-2',
   children: '',
   transform: 'none',

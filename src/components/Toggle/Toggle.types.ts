@@ -37,7 +37,7 @@ export interface ToggleProps extends GlobalComponentTypes {
 export const defaultToggleProps: ToggleProps = {
   id: 'sampingan-toggle',
   inlineStyle: {},
-  backgroundColor: 'sampingan_primary',
+  backgroundColor: 'Y500',
   disabled: false,
   checked: false,
   defaultChecked: false,

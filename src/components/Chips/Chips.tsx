@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { styled } from '../../theme';
-import { SampinganColorVariant } from '../../types/index.types';
-import { hexToRGB, uiThemeHelper, useTypographyInk } from '../../utils/helper';
+import { hexToRGB, uiThemeHelper } from '../../utils/helper';
 import { ChipsProps, defaultChipsProps } from './Chips.types';
 
 const Wrapper = styled('div', {
@@ -25,21 +24,21 @@ const Wrapper = styled('div', {
         },
       },
       inactive: {
-        background: '#FFFFFF',
+        background: '$N50',
         border: 'thin solid #D7DBDD',
         '> span': {
-          color: '#454F57',
+          color: '$N900',
         },
       },
       disabled: {
-        background: 'rgb(229 ,226 ,226)',
+        background: '$N200',
         border: 'none',
         cursor: 'not-allowed',
         '#closeable-button': {
           cursor: 'inherit',
         },
         '*': {
-          color: '#868987',
+          color: '$N900',
         },
       },
     },
@@ -67,7 +66,6 @@ export const Chips = ({
   children,
   onCloseClick,
   ink,
-  system,
   id,
   inlineStyle,
   tagId,
@@ -79,19 +77,17 @@ export const Chips = ({
   };
   const useInk = useMemo(() => {
     if (states === 'active') {
-      const inks = useTypographyInk(system, ink);
-      const slicedInk = inks.slice(1) as SampinganColorVariant;
-      const isWhite =
-        slicedInk === 'sampingan_white' || slicedInk === 'kerjaan_white';
-      const hexRgbColor = uiThemeHelper.colors[slicedInk ?? 'kerjaan_primary'];
+      const isWhite = ink && ink.substring(0, 1) === 'N';
+      const hexRgbColor = uiThemeHelper.colors[ink ?? 'N50'];
+      const rgbAlphaColor = hexToRGB(hexRgbColor, 0.1);
       return {
-        backgroundColor: hexToRGB(hexRgbColor, 0.1),
-        color: isWhite ? '#000' : inks,
-        borderColor: isWhite ? '#000' : inks,
+        backgroundColor: rgbAlphaColor,
+        color: isWhite ? '#000' : '$' + ink,
+        borderColor: isWhite ? '#000' : '$' + ink,
       };
     }
     return {};
-  }, [states, system, ink]);
+  }, [states, ink]);
 
   return (
     <Wrapper id={id} style={inlineStyle} css={useInk} states={states}>

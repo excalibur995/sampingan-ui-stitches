@@ -91,5 +91,5 @@ export const radiogroupDefaultProps: RadioGroupProps = {
   orientation: undefined,
   required: false,
   value: '',
-  color: 'kerjaan_primary',
+  color: 'B500',
 };

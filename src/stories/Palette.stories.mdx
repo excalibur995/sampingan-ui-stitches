@@ -1,0 +1,147 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import Card from "../components/Card";
+import { hexToRGB } from '../utils/helper.ts'
+import useCopyToClipboard from "../hooks/useCopyToClipboard.ts";
+
+<Meta title="Getting Started/Palette" component={Card} />
+
+export const Template = ({ background }) => {
+  const [value, copy] = useCopyToClipboard();
+  const copyColors = async (value, name) => {
+    await copy(value);
+    alert(`${name} copied!`);
+  };
+  const mappersColor = {
+    "#E2F4FA": "B50",
+    "#3DA5D9": "B500",
+    "#215581": "B900",
+    "#FFEBEE": "R50",
+    "#E83730": "R500",
+    "#BA1816": "R900",
+    "#E2F3F2": "G50",
+    "#2A9D90": "G500",
+    "#195347": "G900",
+    "#FFF8E1": "Y50",
+    "#FEC209": "Y500",
+    "#DC5F00": "Y900",
+    "#FFFFFF": "N50",
+    "#F7F7F7": "N100",
+    "#ECECEC": "N200",
+    "#C4C4C4": "N400",
+    "#9B9B9B": "N600",
+    "#262626": "N900",
+  };
+  return (
+    <div className="box-container">
+      <Card
+        onClick={() => copyColors(background, background)}
+        className="box"
+        inlineStyle={{ background }}
+      />
+      <section className="content">
+        <p
+          onClick={() => copyColors(background, mappersColor[background])}
+          className="name"
+        >
+          {mappersColor[background]}
+        </p>
+        <p onClick={() => copyColors(background, background)} className="name">
+          {background}
+        </p>
+        <p
+          onClick={() => copyColors(hexToRGB(background), hexToRGB(background))}
+        >
+          {hexToRGB(background)}
+        </p>
+      </section>
+    </div>
+  );
+};
+
+
+
+<style>{`
+
+.box-container {
+  margin: 10px 0;
+}
+
+.palette-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.palette-section > div {
+  cursor: pointer;
+}
+
+.box {
+  width: 64px;
+  height: 64px;
+  margin: 0 32px;
+  border-radius: 9999px;
+  transform: translateY(0px);
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transition: transform 0.3s ease;
+  transform: translateY(-7px);
+}
+
+.name {
+  font-weight: bold;
+}
+`}</style>
+
+# Sampingan Palette Colors
+
+This is a prototype version of our Sampingan Palette Colors that is still in progress by our designer, so everything in here maybe not appears in the final version.
+
+## Pattern
+
+Every Color has a same pattern that start with `50`, up to `500` and finally `900`. What does this means? it means every color has a **different shade**
+from `50` to `900`, except for `Neutral` colors, it goes from `50`,`100`, `200` , `400` `600` and then `900`.
+
+
+### Neutral
+
+<section className="palette-section">
+  {["#FFFFFF", "#F7F7F7", "#ECECEC", "#C4C4C4", "#9B9B9B", "#262626"].map((background) => (
+    <Template key={background} background={background} />
+  ))}
+</section>
+
+### Blue
+
+<section className="palette-section">
+  {["#E2F4FA", "#3DA5D9", "#215581"].map((background) => (
+    <Template key={background} background={background} />
+  ))}
+</section>
+
+### Yellow
+
+<section className="palette-section">
+  {["#FFF8E1", "#FEC209", "#DC5F00"].map((background) => (
+    <Template key={background} background={background} />
+  ))}
+</section>
+
+### Red
+
+<section className="palette-section">
+  {["#FFEBEE", "#E83730", "#BA1816"].map((background) => (
+    <Template key={background} background={background} />
+  ))}
+</section>
+
+### Green
+
+<section className="palette-section">
+  {["#E2F3F2", "#2A9D90", "#195347"].map((background) => (
+    <Template key={background} background={background} />
+  ))}
+</section>
